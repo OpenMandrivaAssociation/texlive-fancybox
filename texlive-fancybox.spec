@@ -1,3 +1,9 @@
+# revision 18304
+# category Package
+# catalog-ctan /macros/latex/contrib/fancybox
+# catalog-date 2010-05-15 22:45:27 +0200
+# catalog-license lppl1.2
+# catalog-version 1.4
 Name:		texlive-fancybox
 Version:	1.4
 Release:	1
@@ -43,6 +49,7 @@ flushleft, and flushright, lists, and pages.
 %doc %{_texmfdistdir}/doc/latex/fancybox/README
 %doc %{_texmfdistdir}/doc/latex/fancybox/fancybox-doc.pdf
 %doc %{_texmfdistdir}/doc/latex/fancybox/fancybox-doc.tex
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -53,3 +60,5 @@ flushleft, and flushright, lists, and pages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
