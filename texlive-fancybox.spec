@@ -17,8 +17,6 @@ BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
 Requires(post):	texlive-kpathsea
-Conflicts:	texlive-texmf <= 20110705-3
-Conflicts:	texlive-doc <= 20110705-3
 
 %description
 Provides variants of \fbox: \shadowbox, \doublebox, \ovalbox,
@@ -26,20 +24,12 @@ Provides variants of \fbox: \shadowbox, \doublebox, \ovalbox,
 verbatim macros. You can box mathematics, floats, center,
 flushleft, and flushright, lists, and pages.
 
-%pre
-    %_texmf_mktexlsr_pre
-
 %post
-    %_texmf_mktexlsr_post
-
-%preun
-    if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_pre
-    fi
+    %{_sbindir}/texlive.post
 
 %postun
     if [ $1 -eq 0 ]; then
-	%_texmf_mktexlsr_post
+	%{_sbindir}/texlive.post
     fi
 
 #-----------------------------------------------------------------------
@@ -50,7 +40,6 @@ flushleft, and flushright, lists, and pages.
 %doc %{_texmfdistdir}/doc/latex/fancybox/README
 %doc %{_texmfdistdir}/doc/latex/fancybox/fancybox-doc.pdf
 %doc %{_texmfdistdir}/doc/latex/fancybox/fancybox-doc.tex
-%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -61,5 +50,3 @@ flushleft, and flushright, lists, and pages.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-mkdir -p %{buildroot}%{_tlpkgobjdir}
-cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
