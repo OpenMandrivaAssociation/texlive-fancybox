@@ -6,7 +6,7 @@
 # catalog-version 1.4
 Name:		texlive-fancybox
 Version:	1.4
-Release:	4
+Release:	5
 Summary:	Variants of \fbox and other games with boxes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancybox
