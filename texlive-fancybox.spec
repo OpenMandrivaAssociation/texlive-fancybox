@@ -1,18 +1,12 @@
-# revision 18304
-# category Package
-# catalog-ctan /macros/latex/contrib/fancybox
-# catalog-date 2010-05-15 22:45:27 +0200
-# catalog-license lppl1.2
-# catalog-version 1.4
 Name:		texlive-fancybox
-Version:	1.4
-Release:	11
+Version:	18304
+Release:	1
 Summary:	Variants of \fbox and other games with boxes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancybox
 License:	LPPL1.2
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancybox.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancybox.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancybox.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancybox.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ verbatim macros. You can box mathematics, floats, center,
 flushleft, and flushright, lists, and pages.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -43,24 +37,10 @@ flushleft, and flushright, lists, and pages.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar tex doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 1.4-2
-+ Revision: 751754
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 1.4-1
-+ Revision: 718411
-- texlive-fancybox
-- texlive-fancybox
-- texlive-fancybox
-- texlive-fancybox
-
