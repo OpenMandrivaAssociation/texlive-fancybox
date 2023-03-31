@@ -1,6 +1,6 @@
 Name:		texlive-fancybox
 Version:	18304
-Release:	1
+Release:	2
 Summary:	Variants of \fbox and other games with boxes
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancybox
