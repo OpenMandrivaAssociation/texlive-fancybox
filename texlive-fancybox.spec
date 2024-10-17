@@ -3,7 +3,7 @@ Version:	18304
 Release:	2
 Summary:	Variants of \fbox and other games with boxes
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/fancybox
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/fancybox
 License:	LPPL1.2
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancybox.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/fancybox.doc.r%{version}.tar.xz
